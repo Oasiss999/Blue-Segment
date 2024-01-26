@@ -1,0 +1,16 @@
+{
+  "name": "bluesegment",
+  "version": "1.0.0",
+  "description": "a application to segment images from  csv files",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}
