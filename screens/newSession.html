@@ -21,14 +21,18 @@
         touch-action: manipulation;
         margin-right: 10px;
         position: fixed;
-        top: 2;
-        left: 1;
+        position: absolute;
+        top: 2rem;
+        left: 1rem;
     }
     body{
        
 
         background: linear-gradient(to left, rgb(18, 148, 157), lightblue);
+        display: flex;
         align-items: center;
+        justify-content: center;
+        height: 100vh;
         
     }
     .formClass{
@@ -75,20 +79,48 @@
             padding: 0 2.6rem;
         }
     }
+    .form_div{
+        border:2px solid;
+        padding-left: 20px;
+        padding-right:20px;
+        padding-bottom:20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+
+        
+    }
+    .centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    }
+    .inputClass{
+        background-color: transparent;
+        border:none;
+        border-bottom:1px solid;
+        padding-bottom:3px;
+    }
     
 </Style>
 
 <html>
-<head>
-    <title>Blue Segment</title>
-</head>
-<button class ="backButton"onclick="window.history.back()">Go Back</button>
-<body>
-    <form class = "formClass">
-        <p>Enter a desired session name and file path to be used</p>
-        <input class ="inputClass" type="text" name="sessionName" placeholder="Session Name">
-        <input class ="inputClass" type="text" name="CSV" placeholder="CSV File path">
-        <button class = "butt1class">enter</button>
-    </form>
-</body>
+        <head>
+            <title>Blue Segment</title>
+        </head>
+        <body>
+            <button class="backButton" onclick="window.history.back()">Go Back</button>
+            <div class="centered">
+                <div class="form_div">
+                    <form class="formClass">
+                        <form class = "formClass">  
+                            <input class ="inputClass" type="text" name="sessionName" placeholder="Session Name"/>
+                            <input class ="inputClass" type="text" name="CSV" placeholder="CSV File path"/>
+                            <button class = "butt1class">enter</button>
+                        </form>
+                    </form>
+                </div>
+            </div>
+        </body>
 </html>
+
