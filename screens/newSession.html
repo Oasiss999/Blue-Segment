@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <Style>
     .backButton{
@@ -112,15 +115,26 @@
             <button class="backButton" onclick="window.history.back()">Go Back</button>
             <div class="centered">
                 <div class="form_div">
-                    <form class="formClass">
-                        <form class = "formClass">  
-                            <input class ="inputClass" type="text" name="sessionName" placeholder="Session Name"/>
-                            <input class ="inputClass" type="text" name="CSV" placeholder="CSV File path"/>
-                            <button class = "butt1class">enter</button>
+                    
+                        <form class = "formClass" onsubmit="submitForm(event)">  
+                            <input class ="inputClass" type="text" name="sessionName" id="sessionName" placeholder="Session Name"/>
+                            <input class ="inputClass" type="text" name="CSV" id="csvFilePath" placeholder="CSV File path"/>
+                            <button class = "butt1class" >enter</button>
                         </form>
-                    </form>
+                   
                 </div>
             </div>
+            <script>
+                function submitForm(event) {
+                         event.preventDefault();
+                         var sessionName = document.getElementById('sessionName').value;
+                         var csvFilePath = document.getElementById('csvFilePath').value;
+                         console.log('Session Name: ' + sessionName);
+                         console.log('CSV File Path: ' + csvFilePath);
+                         window.location.href = '/Users/oasis/Documents/bluesegment/bounder-main/build/index.html';
+                     }
+             </script>
+            
         </body>
 </html>
 

@@ -13,7 +13,8 @@ const createWindow = () => {
         
         
     });
-    win.loadFile('screens/HomePage.html');
+    win.loadFile('bounder-main/build/index.html');
+    win.webContents.openDevTools();
     
 
 }

@@ -12,5 +12,9 @@
   "devDependencies": {
     "electron": "^28.2.0",
     "electron-reload": "^2.0.0-alpha.1"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
