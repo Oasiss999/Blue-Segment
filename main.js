@@ -8,7 +8,7 @@ const createWindow = () => {
         height: 600,
         minWidth: 800,
         minHeight: 600,
-        frame: false,
+        titleBarStyle: 'hidden',
         
         
         

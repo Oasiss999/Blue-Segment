@@ -46,7 +46,7 @@ body{
     width: 300px;
     height:20px;
 }
-.butt1class{
+.butt1new{
     background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
     border-radius: 8px;
     border-style: none;
@@ -57,7 +57,7 @@ body{
     font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
     font-size: 16px;
     font-weight: 500;
-    height: 4rem;
+    height: 35px;
     padding: 0 1.6rem;
     text-align: center;
     text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
@@ -66,6 +66,8 @@ body{
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-right: 10px;
+    width:200px;
+    margin-top: 50px;
 
 }
 .butt1class:hover {

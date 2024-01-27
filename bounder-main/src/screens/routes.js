@@ -9,8 +9,7 @@ export const RoutesComponent = () => {
       <Router>
         <Routes>
             <Route path="/" element={<Start/>} />
-            <Route path="/newSession" element={<NewSession/>} />
-      
+            <Route path="/newSession" element={<NewSession/>} /> 
             <Route path="/home" element={<HomePage/>} />
         </Routes>
       </Router>

@@ -4,7 +4,8 @@ import App from '../components/App';
 
 function HomePage() {
   return (
-    <div id="title-bar" >
+    <div >
+    
       <App style ={{flex:1}}/>
     </div>
   );

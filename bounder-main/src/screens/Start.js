@@ -6,14 +6,14 @@ function Start() {
     const navigate = useNavigate();
     return (
         <div>
-            <div id="title-bar">
+            {/* <div id="title-bar">
                 <h1 id="title">Blue Segment</h1>
                 <div id="window-controls">
                     <button className="window-control-button" id="close-button">x</button>
                     <button className="window-control-button" id="minimize-button">-</button>
                     <button className="window-control-button" id="maximize-button">+</button>
                 </div>
-            </div>
+            </div> */}
     
             <div className="div1class">
                 <p>Welcome!</p>

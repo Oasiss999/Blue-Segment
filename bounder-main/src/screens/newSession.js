@@ -20,7 +20,7 @@ function App() {
                         <form class = "formClass" onSubmit={handleSubmition}>  
                             <input class ="inputClass" type="text" name="sessionName" id="sessionName" placeholder="Session Name"/>
                             <input class ="inputClass" type="text" name="CSV" id="csvFilePath" placeholder="CSV File path"/>
-                            <button class = "butt1class" >enter</button>
+                            <button class = "butt1new" >enter</button>
                         </form>
                    
                 </div>
