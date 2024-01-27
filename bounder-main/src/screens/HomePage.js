@@ -4,8 +4,8 @@ import App from '../components/App';
 
 function HomePage() {
   return (
-    <div id="root">
-      <App />
+    <div id="title-bar" >
+      <App style ={{flex:1}}/>
     </div>
   );
 }

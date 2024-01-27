@@ -31,3 +31,46 @@
     justify-content: center;
     height: 100vh;
   }
+  #title-bar {
+    -webkit-app-region: drag;
+    position: fixed; /* Keeps the title bar fixed at the top of the window */
+    top: 0; /* Positions the title bar at the top of the window */
+    left: 0; /* Positions the title bar at the left of the window */
+    width: 100%; /* Makes the title bar span the entire width of the window */
+    height:20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #444;
+    color: rgb(7, 7, 7);
+    padding: 5px;
+    background-color: rgb(48, 169, 169);
+    }
+    
+    #title {
+        position: absolute; /* Positions the title independently of the other elements */
+        left: 50%; /* Centers the title */
+        transform: translateX(-50%); /* Ensures the title is centered */
+        top: 0px;
+    }
+    
+    #window-controls {
+        position: absolute; /* Positions the window controls independently of the other elements */
+        left: 3px; /* Positions the window controls at the left of the title bar */
+    }
+    
+    .window-control-button {
+        border-width: 0px;
+        margin-left: 5px;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    #minimize-button{
+        background-color:rgb(244, 244, 108);
+    }
+    #close-button{
+        background-color:rgb(248, 84, 84);
+    }
+    #maximize-button{
+        background-color:rgb(27, 250, 27);
+    }
+    
