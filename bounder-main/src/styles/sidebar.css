@@ -6,7 +6,7 @@
     width: 450px;
     max-width: 450px;
     height: 100vh;
-    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    background-image: linear-gradient(92.88deg, #787878 9.16%, #989898 43.89%, #d6d6d8 64.72%);
     z-index: 9999;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .content-container.left {
-    background-image: linear-gradient(92.88deg, #6481e9 9.16%, #8170ef 43.89%, #9370f4 64.72%);
+    background-image: linear-gradient(92.88deg, #545454 9.16%, #b0b0b0 43.89%, #99999b 64.72%);
     grid-template-columns:  calc(100% - 70px) 41px;
 }
 

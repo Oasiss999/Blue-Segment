@@ -1,12 +1,18 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../styles/newSession.css'
 import { useNavigate } from 'react-router-dom';
 function App() {
+    const[sessionName, setSessionName] = useState('');
+    const[csvFilePath, setCsvFilePath] = useState('');
     const navigate = useNavigate();
     const handleSubmition = (event) => {
         event.preventDefault();
+        console.log(sessionName);
+        console.log(csvFilePath);
         navigate('/home');
     }
+
+    
   return (
     <div>
           <head>
@@ -18,8 +24,8 @@ function App() {
                 <div class="form_div">
                     
                         <form class = "formClass" onSubmit={handleSubmition}>  
-                            <input class ="inputClass" type="text" name="sessionName" id="sessionName" placeholder="Session Name"/>
-                            <input class ="inputClass" type="text" name="CSV" id="csvFilePath" placeholder="CSV File path"/>
+                            <input class ="inputClass" type="text" name="sessionName" id="sessionName" placeholder="Session Name" onChange={(e) => setSessionName(e.target.value)}/>
+                            <input class ="inputClass" type="text" name="CSV" id="csvFilePath" placeholder="CSV File path" onChange={(e) => setCsvFilePath(e.target.value)}/>
                             <button class = "butt1new" >enter</button>
                         </form>
                    
