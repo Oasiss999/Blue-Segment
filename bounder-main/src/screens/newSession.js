@@ -5,10 +5,27 @@ function App() {
     const[sessionName, setSessionName] = useState('');
     const[csvFilePath, setCsvFilePath] = useState('');
     const navigate = useNavigate();
+
     const handleSubmition = (event) => {
+        if(sessionName === '' || csvFilePath === ''){
+            alert('Please fill in all the fields');
+            return;
+        }
         event.preventDefault();
         console.log(sessionName);
         console.log(csvFilePath);
+        var formData = new FormData();
+        formData.append('csvFilePath', csvFilePath);
+        formData.append('sessionName', sessionName);
+        fetch('http://localhost:8000/create_starter_images', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch((error) => {
+          console.error('Error:', error);
+        });
         navigate('/home');
     }
 

@@ -3,6 +3,7 @@ import '../styles/Start.css'
 import { useNavigate } from 'react-router-dom';
 // /Users/oasis/Documents/bluesegment/bounder-main/src/screens/Start.js
 function Start() {
+    
     const navigate = useNavigate();
     return (
         <div>
