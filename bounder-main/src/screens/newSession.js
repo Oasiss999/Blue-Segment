@@ -7,8 +7,8 @@ function App() {
     const navigate = useNavigate();
 
     const handleSubmition = (event) => {
-        if(sessionName === '' || csvFilePath === ''){
-            alert('Please fill in all the fields');
+        if(sessionName === '' ){
+            alert('Please enter a session name');
             return;
         }
         event.preventDefault();
@@ -42,7 +42,7 @@ function App() {
                     
                         <form class = "formClass" onSubmit={handleSubmition}>  
                             <input class ="inputClass" type="text" name="sessionName" id="sessionName" placeholder="Session Name" onChange={(e) => setSessionName(e.target.value)}/>
-                            <input class ="inputClass" type="text" name="CSV" id="csvFilePath" placeholder="CSV File path" onChange={(e) => setCsvFilePath(e.target.value)}/>
+                            <input class ="inputClass" type="text" name="CSV" id="csvFilePath" placeholder="CSV File path (optional)" onChange={(e) => setCsvFilePath(e.target.value)}/>
                             <button class = "butt1new" >enter</button>
                         </form>
                    
