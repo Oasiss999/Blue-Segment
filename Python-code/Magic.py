@@ -21,13 +21,14 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-def get_phase_color(file, save_image=True):
+def get_phase_color(file):
 
     # skip the first two lines because thats just the header
+    print("reading file")
     file.seek(0)
     file.readline()
     file.readline()
-
+   
     # find the max x and y values to determine the size of the image
     max_x = 0
     max_y = 0
@@ -59,18 +60,18 @@ def get_phase_color(file, save_image=True):
         rgb = np.array(rgb, "int")
         #if line[3] is 1 then the pixel is a grain and we assign it the rgb value
         if (int(line[3]) == 1):
-            rgb = rgb/255
+            rgb = rgb/255.0
             #add 0.5 alpha value to rgb
             rgba = np.append(rgb,0.5)
             euler_phase[x,y,:] = rgba
             
         else:
-            euler_phase[x,y,:] = [1,1,1,0]
+            euler_phase[x,y,:] = [1.0,1.0,1.0,0.0]
 
-   
-
-    return euler_phase
+        
     
+    return euler_phase
+
 def get_chem(file,max_chemicals, save_image=True,chemical=1):
     # skip the first two lines because thats just the header
     file.seek(0)
@@ -167,6 +168,7 @@ def read_and_create():
     session = Sessions + session 
     Euler_dir= session + '/Euler_Images'
     Chem_dir = session + '/Chemical_Images'
+
     if not os.path.exists(Sessions):
         os.makedirs(Sessions)
     if not os.path.exists(session):
@@ -180,15 +182,29 @@ def read_and_create():
         with open(filename, 'r') as file:
             max_chemicals = find_max_of_chem(file)
 
-            euler_image=get_phase_color(file)
+            print("getting chemicals")
+            euler_image = get_phase_color(file)
+            print("saving euler image")
+            print(euler_image.dtype)
+            print(euler_image.min(), euler_image.max())
+            euler_image = (euler_image*255).astype(np.uint8)
             imageio.imwrite(Euler_dir+'/euler_phase.png', euler_image)
+            
+            
+            print("getting AL")
             AL_img = get_chem(file, max_chemicals, chemical=0)
+            print("getting CA")
             CA_img = get_chem(file, max_chemicals, chemical=1)
+            print("getting NA")
             NA_img = get_chem(file, max_chemicals, chemical=2)
+            print("getting FE")
             FE_img = get_chem(file, max_chemicals, chemical=3)
+            print("getting SI")
             SI_img = get_chem(file, max_chemicals, chemical=4)
+            print("getting K")
             K_img = get_chem(file, max_chemicals, chemical=5)
 
+            print("converting images")
             # Convert the arrays to uint8 arrays with values in the range 0-255
             AL_img_uint8 = (AL_img ).astype(np.uint8)
             CA_img_uint8 = (CA_img ).astype(np.uint8)
@@ -196,7 +212,8 @@ def read_and_create():
             FE_img_uint8 = (FE_img ).astype(np.uint8)
             SI_img_uint8 = (SI_img ).astype(np.uint8)
             K_img_uint8 = (K_img ).astype(np.uint8)
-
+            
+            print("saving images")
             # Now you can save the arrays as images
             imageio.imwrite(Chem_dir+'/AL_fromFile.png', AL_img_uint8)
             imageio.imwrite(Chem_dir+'/CA_fromFile.png', CA_img_uint8)
