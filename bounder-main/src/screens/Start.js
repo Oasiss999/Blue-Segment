@@ -21,7 +21,7 @@ function Start() {
                 <p>What would you like to do?</p>   
                 <div className="div2class">
                     <button className="butt1class" onClick={()=> navigate('/newSession')}>New session</button>
-                    <button className="butt1class">Old session</button>
+                    <button className="butt1class" onClick={()=> navigate('/oldSessions')}>Old session</button>
                 </div>
             </div>
         </div>

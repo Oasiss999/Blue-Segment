@@ -18,6 +18,9 @@ import itertools
 import time
 from flask import Flask, request
 from flask_cors import CORS
+import json
+
+
 app = Flask(__name__)
 CORS(app)
 
@@ -514,7 +517,16 @@ def create_XA():
     create_A()
     print("Done with creating the masks!")
 
-
+@app.route('/get_Sessions', methods=['GET'])
+def getSessions():
+    print("Getting sessions...")
+    try:
+        Sessions = 'Sessions/'
+        session_list = os.listdir(Sessions)
+        session_json = [{"label": name} for name in session_list]
+        return json.dumps(session_json), 200
+    except Exception as e:
+        return str(e), 500
 
 if __name__ == "__main__":
     app.run(port=8000, debug=True)

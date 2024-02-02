@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import '../styles/newSession.css'
 import { useNavigate } from 'react-router-dom';
+import BackButton from '../components/additional-components/Button/BackButton';
 function App() {
     const[sessionName, setSessionName] = useState('');
     const[csvFilePath, setCsvFilePath] = useState('');
@@ -36,7 +37,7 @@ function App() {
             <title>Blue Segment</title>
         </head>
         <body>
-            <button class="backButton" onClick={()=>navigate('/')}> Go Back</button>
+            <BackButton />
             <div class="centered">
                 <div class="form_div">
                     
